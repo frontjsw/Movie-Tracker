@@ -1,13 +1,16 @@
 const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 
-export const getPopularMovies = async () => {
-  const res = await fetch("https://api.themoviedb.org/3/movie/popular", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
+export const getPopularMovies = async (page) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/popular?page=${page}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
     },
-  });
+  );
 
   if (!res.ok) {
     throw new Error(`HTTP 상태 코드 : ${res.status}`);
