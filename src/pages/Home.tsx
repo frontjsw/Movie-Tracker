@@ -7,28 +7,32 @@ const Home = () => {
   const [movieData, setMovieData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   useEffect(() => {
-    fetch("https://api.themoviedb.org/3/movie/popular", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
+    const fetchMovies = async () => {
+      try {
+        const res = await fetch("https://api.themoviedb.org/3/movie/popular", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+          },
+        });
+
         if (!res.ok) {
           throw new Error(`HTTP 상태 코드: ${res.status}`);
         }
-        return res.json();
-      })
-      .then((data) => {
+
+        const data = await res.json();
+
         setMovieData(data.results);
         setIsLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("error : ", error);
         setIsLoading(false);
-      });
+      }
+    };
+    fetchMovies();
   }, [apiKey]);
+
   return (
     <div>
       {isLoading ? (
