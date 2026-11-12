@@ -1,6 +1,11 @@
 import "./MovieCard.scss";
+import type { MovieType } from "../../../types/movie";
 
-const MovieCard = ({ data }) => {
+interface MovieCardProps {
+  data: MovieType;
+}
+
+const MovieCard = ({ data }: MovieCardProps) => {
   return (
     <div className="movie-card">
       <img

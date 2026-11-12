@@ -1,6 +1,10 @@
+import type { MoviesResponse } from "../types/movie";
+
 const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 
-export const getPopularMovies = async (page) => {
+export const getPopularMovies = async (
+  page: number,
+): Promise<MoviesResponse> => {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/popular?page=${page}`,
     {
@@ -20,7 +24,9 @@ export const getPopularMovies = async (page) => {
   return data;
 };
 
-export const getSearchMovies = async (searchText) => {
+export const getSearchMovies = async (
+  searchText: string,
+): Promise<MoviesResponse> => {
   const res = await fetch(
     `https://api.themoviedb.org/3/search/movie?query=${searchText}`,
     {
