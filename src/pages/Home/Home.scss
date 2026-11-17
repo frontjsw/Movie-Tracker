@@ -1,0 +1,8 @@
+.home {
+  padding: 0 48px;
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 120px;
+  }
+}
