@@ -8,6 +8,7 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ data }: MovieCardProps) => {
+  const rating = Math.floor(data.vote_average * 10) / 10;
   return (
     <Link to={`/movie/${data.id}`} className="movie-card">
       <img
@@ -17,8 +18,8 @@ const MovieCard = ({ data }: MovieCardProps) => {
       />
       <h1 className="movie-title">{data.title}</h1>
       <div className="movie-rating-box">
-        <StarRating rating={data.vote_average} />
-        <div className="movie-vote-average">{data.vote_average}</div>
+        <StarRating rating={rating} />
+        <div className="movie-vote-average">{rating.toFixed(1)}</div>
       </div>
       <div className="movie-overview">{data.overview}</div>
       <div className="movie-release-date">{data.release_date}</div>
