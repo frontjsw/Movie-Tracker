@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #14181c;
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 48px;
+    color: #fff;
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 0 24px;
+      .nav-item {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}

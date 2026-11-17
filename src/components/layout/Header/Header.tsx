@@ -5,11 +5,10 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-inner">
-        <h1 className="logo">MovieTracker</h1>
+        <h1 className="logo">
+          <Link to="/">MOVIE TRACKER</Link>
+        </h1>
         <ul className="nav-list">
-          <li className="nav-item">
-            <Link to="/">Home</Link>
-          </li>
           <li className="nav-item">
             <Link to="/watchlist">WatchList</Link>
           </li>
