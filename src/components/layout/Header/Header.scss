@@ -16,14 +16,28 @@
       font-size: 24px;
       font-weight: 700;
     }
-    .nav-list {
-      display: flex;
-      align-items: center;
-      gap: 0 24px;
-      .nav-item {
+    // .nav-list {
+    //   display: flex;
+    //   align-items: center;
+    //   gap: 0 24px;
+    //   .nav-item {
+    //     font-size: 16px;
+    //     font-weight: 600;
+    //   }
+    // }
+  }
+}
+@media (max-width: 420px) {
+  .header {
+    .header-inner {
+      .logo {
         font-size: 16px;
-        font-weight: 600;
       }
+      //   .nav-list {
+      //     .nav-item {
+      //       font-size: 14px;
+      //     }
+      //   }
     }
   }
 }

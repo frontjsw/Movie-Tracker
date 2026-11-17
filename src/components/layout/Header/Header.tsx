@@ -8,11 +8,11 @@ const Header = () => {
         <h1 className="logo">
           <Link to="/">MOVIE TRACKER</Link>
         </h1>
-        <ul className="nav-list">
+        {/* <ul className="nav-list">
           <li className="nav-item">
             <Link to="/watchlist">WatchList</Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const MovieDetail = () => {
     videosData,
     similarMoviesData,
     isLoading,
-  } = useMovieDetail(Number(id));
+  } = useMovieDetail(id);
 
   if (isLoading) return <>Loading...</>;
   if (!movieDetailData) return null;

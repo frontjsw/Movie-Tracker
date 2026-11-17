@@ -25,3 +25,30 @@
     gap: 24px 48px;
   }
 }
+
+@media (max-width: 1024px) {
+  .home {
+    .movie-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media (max-width: 720px) {
+  .home {
+    .search-input-wrap {
+      .search-input-label {
+        width: 100%;
+      }
+    }
+    .movie-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+@media (max-width: 420px) {
+  .home {
+    .movie-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
